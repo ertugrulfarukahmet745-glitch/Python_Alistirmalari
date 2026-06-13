@@ -1,0 +1,50 @@
+import time
+import os
+import pygame
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
+def Better_Call_Saul():
+    # 1. Pygame mixer modülünü başlatıyoruz
+    pygame.mixer.init()
+    
+    try:
+        # 2. Ses dosyasını yüklüyoruz
+        # Not: Ses dosyasının, bu python koduyla AYNI KLASÖRDE olduğundan emin ol.
+        pygame.mixer.music.load("better-call-saul-intro.mp3")
+        
+        # 3. Müziği çalmaya başlıyoruz
+        pygame.mixer.music.play()
+    except pygame.error:
+        print("Ses dosyası bulunamadı veya yüklenemedi! Lütfen dosya adını kontrol edin.")
+
+    time.sleep(0.3)
+
+    print("""
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠁⠀⠀⠀⠀⠀⠹⣿⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣶⣶⣶⣶⣶⣶⣶⣶⡶⠰⠀⠀⠀⢀⣤⣴⣶⣶⣶⣦⡙⢻⢗⣶⣶⣶⣶⣶⣶⣶⣶
+                ⣿⣿⣿⣿⣿⣿⣿⣿⡗⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⠈⢪⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠈⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⣿⠋⢀⠉⠙⣿⡟⠛⣋⠙⣿⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⡇⣤⣴⣶⡆⣿⣷⣶⣤⣅⣼⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿
+                ⠉⠉⠉⠉⠉⠉⠉⠉⠐⠀⡇⢿⣿⣿⠐⣿⣿⣿⣿⣿⣿⠸⢴⢛⣻⣿⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⢠⡿⢿⡀⢀⣴⣿⣿⣿⣿⡶⢻⠈⢿⣿⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⠈⣇⣠⡭⠉⢭⣝⣻⣿⠟⠀⢸⠀⠨⢹⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⠟⢋⡄⠀⢸⢀⢠⣼⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⡆⠀⢀⢸⣿⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⣄⡀⣴⣾⣿⣿⢟⣼⡇⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿
+                ⠀⠀⠀⠀⠀⠀⠀⠀⣠⡄⠀⠘⢿⣿⡦⣥⡝⠱⣿⣿⠃⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿
+                ⠀⠀⠀⠀⠀⠀⠀⠎⢀⡄⠀⠀⠈⢿⣤⡀⣴⠀⣹⡿⠀⠀
+                ⠀⠀⠀⠀⠀⢠⣾⣶⣬⣧⣀⠀⣀⠈⢿⡇⠉⠂⣿⠇⠀⠀
+                ⠀⠀⠀⠀⢀⣾⣿⣝⣛⠿⢿⡿⢿⡗⠈⠃⠀⠀⠸⠀⠀
+                ⠀⠀⠀⠀⢀⣭⣛⣛⣛⠿⠗⠉
+                ⠀⠀⠀⢠⠚⠻⠛⠹⠟⠷⠉⠀
+                ⠀⠀⠀⣄⣄⠀⠀⠀⠀⠀
+                ⠀⠀⠀⢁⠁⢠⠆⣰⠀⠀
+                ⠀⠀⠀⢸⣷⣤⡴⠃⠀
+                            """)
+    
+    while pygame.mixer.music.get_busy():
+        time.sleep(0.1)
+
+Better_Call_Saul()
