@@ -1,0 +1,13 @@
+import random
+
+def asal(sayi):
+    if sayi < 2:
+        return False
+    for i in range(2, int(sayi ** 0.5) + 1):
+        if sayi % 2 == 0:
+            return False
+    return True
+
+n = random.randint(1, 100)
+
+asal(n)
