@@ -1,0 +1,12 @@
+def kelime_sayisi(metin):
+    kelimeler = metin.split()
+    return len(kelimeler)
+
+def harf_sayisi(metin):
+    harfler = metin.replace(" ", "")
+    return len(harfler)
+
+print("Metin giriniz:")
+girdi = input()
+print("Kelime sayısı:", kelime_sayisi(girdi))
+print("Harf sayısı:", harf_sayisi(girdi))
