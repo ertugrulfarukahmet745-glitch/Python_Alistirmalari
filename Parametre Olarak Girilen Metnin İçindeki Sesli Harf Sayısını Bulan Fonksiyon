@@ -1,0 +1,9 @@
+def sesli_harfleri_say(metin):
+    sesliler = "AEUÜIİOÖaeuüıioö"
+    sayac = 0
+    for i in metin:
+        if i in sesliler:
+            sayac = sayac + 1
+    return sayac
+
+print(sesli_harfleri_say("Sivil Standart"))
