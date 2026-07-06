@@ -56,4 +56,4 @@ def gun_hesapla(gun, ay, yil):
 
     return gunler[sonuc]
 
-gun_hesapla(7, 7, 2026)
+print(gun_hesapla(7, 7, 2026))
