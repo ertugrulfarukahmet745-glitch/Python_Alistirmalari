@@ -1,0 +1,59 @@
+def gun_hesapla(gun, ay, yil):
+    gunler = [
+        "Pazartesi",
+        "Salı",
+        "Çarşamba",
+        "Perşembe",
+        "Cuma",
+        "Cumartesi",
+        "Pazar"
+    ]
+
+    # 1) Yüzyıl çapa günü
+    yuzyil = yil // 100
+
+    if yuzyil == 18:
+        capa = 4   # Cuma
+    elif yuzyil == 19:
+        capa = 2   # Çarşamba
+    elif yuzyil == 20:
+        capa = 1   # Salı
+    elif yuzyil == 21:
+        capa = 6   # Pazar
+    else:
+        return "Bu örnek sadece 1800-2199 yıllarını destekliyor."
+
+    # 2) Yılın son iki hanesi
+    yy = yil % 100
+
+    a = yy // 12
+    b = yy % 12
+    c = b // 4
+
+    doomsday = (capa + a + b + c) % 7
+
+    # 3) Artık yıl kontrolü
+    artik = (yil % 400 == 0) or (yil % 4 == 0 and yil % 100 != 0)
+
+    # 4) Ayların Doomsday tarihleri
+    doom = {
+        1: 4 if artik else 3,
+        2: 29 if artik else 28,
+        3: 14,
+        4: 4,
+        5: 9,
+        6: 6,
+        7: 11,
+        8: 8,
+        9: 5,
+        10: 10,
+        11: 7,
+        12: 12
+    }
+
+    fark = gun - doom[ay]
+    sonuc = (doomsday + fark) % 7
+
+    return gunler[sonuc]
+
+gun_hesapla(7, 7, 2026)
